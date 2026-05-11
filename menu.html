@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script
+      src="https://kit.fontawesome.com/11ab297816.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      body {
+        background-color: #f9f9f9;
+      }
+    </style>
+    <title>Foodie Website</title>
+  </head>
+  <body>
+    <!-- Top nav bar -->
+    <nav
+      class="sticky top-0 z-50 flex justify-between items-center px-6 py-4 w-full bg-white/95 backdrop-blur-md shadow-sm dark:shadow-none border-b border-gray-100"
+    >
+      <div class="flex items-center gap-8">
+        <span>
+          <img src="Assets/Foodie-copy.PNG" class="w-20 h-auto" />
+        </span>
+        <div class="hidden md:flex gap-6 items-center">
+          <a
+            class="font-md text-sm font-bold border-b-2 border-red-600 text-red-600"
+            href="#"
+            >Home</a
+          >
+          <a
+            class="font-md text-sm font-medium tracking-tight text-gray-600 hover:text-red-600 transition-color duration-200"
+            href="#"
+            >Menu</a
+          >
+          <a
+            class="font-md text-sm font-medium tracking-tight text-gray-600 hover:text-red-600 transition-color duration-200"
+            href="#"
+            >Deals</a
+          >
+          <a
+            class="font-md text-sm font-medium tracking-tight text-gray-600 hover:text-red-600 transition-color duration-200"
+            href="#"
+            >About</a
+          >
+          <a
+            class="font-md text-sm font-medium tracking-tight text-gray-600 hover:text-red-600 transition-color duration-200"
+            href="#"
+            >Contact</a
+          >
+        </div>
+      </div>
+      <div class="flex items-center gap-4">
+        <button class="p-2 text-gray-600 hover:bg-gray-50 rounded-full">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+
+        <button class="p-2 text-gray-600 hover:bg-gray-50 rounded-full">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </button>
+
+        <button class="p-2 text-gray-600 hover:bg-gray-50 rounded-full">
+          <i class="fa-solid fa-circle-user"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Header Banner -->
+    <main class="max-w-7xl mx-auto px-6 py-10">
+      <section class="mb-6">
+        <h1 class="font-bold text-4xl text-on-surface mb-4">
+          Our Delicious Menu
+        </h1>
+        <p class="font-lg text-lg text-gray-400 mb-6 max-w-2xl">
+          From flamed-grilled burgers to smokey jollof rice, we serve fresh
+          ingredients and bold flavors delivered staight to your door.
+        </p>
+
+        <div class="flex flex-wrap gap-3">
+          <a href=""
+            ><button
+              class="px-6 py-2 rounded-full bg-red-700 text-white font-bold shadow-md transform transition hover:-translate-y-0.5 cursor-pointer"
+            >
+              All
+            </button></a
+          >
+
+          <a href=""
+            ><button
+              class="px-6 py-2 rounded-full bg-gray-100 text-yellow-900 font-bold transform transition hover:-translate-y-0.5 cursor-pointer"
+            >
+              American
+            </button></a
+          >
+
+          <a href=""
+            ><button
+              class="px-6 py-2 rounded-full bg-gray-100 text-yellow-900 font-bold transform transition hover:-translate-y-0.5 cursor-pointer"
+            >
+              Chinese
+            </button></a
+          >
+
+          <a href=""
+            ><button
+              class="px-6 py-2 rounded-full bg-gray-100 text-yellow-900 font-bold transform transition hover:-translate-y-0.5 cursor-pointer"
+            >
+              African
+            </button></a
+          >
+
+          <a href=""
+            ><button
+              class="px-6 py-2 rounded-full bg-gray-100 text-yellow-900 font-bold transform transition hover:-translate-y-0.5 cursor-pointer"
+            >
+              Snacks
+            </button></a
+          >
+
+          <a href=""
+            ><button
+              class="px-6 py-2 rounded-full bg-gray-100 text-yellow-900 font-bold transform transition hover:-translate-y-0.5 cursor-pointer"
+            >
+              Drinks
+            </button></a
+          >
+        </div>
+      </section>
+
+      <!-- Food display Section -->
+
+      <section
+        class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-gutters"
+      >
+        <a href=""
+          ><div
+            class="bg-white rounded-xl overflow-hidden shadow-md shadow-gray-300 hover:outline hover:outline-variant transition-all duration-400 cursor-pointer"
+          >
+            <div class="aspect-square w-full overflow-hidden">
+              <img
+                src="Assets/Double burger main page.jpg"
+                alt=""
+                class="w-full h-full object-cover group-hover:scale-110 transition transform duration-500"
+              />
+            </div>
+            <div class="p-3 flex flex-col flex-grow">
+              <div class="flex justify-between items-start mb-base">
+                <h3 class="font-md text-lg text-on-surface">
+                  Double Cheese Burger
+                </h3>
+                <span>
+                  <i
+                    class="fa-solid fa-star"
+                    style="color: rgb(255, 212, 59)"
+                  ></i>
+                </span>
+              </div>
+
+              <p class="font-md text-gray-400 text-sm mb-3 line-clamp-2">
+                Premium beef patty with extra cheddar, secret sauce and fresh
+                vegetables.
+              </p>
+              <div class="mt-auto flex items-center justify-between">
+                <span class="font-bold text-red-700">$5.49</span>
+                <button
+                  class="bg-red-600 text-white p-2 rounded-full flex items-center justify-center hover:bg-red-700 active:scale-90 transition all shadow-md"
+                >
+                  <span>
+                    <i
+                      class="fa-solid fa-cart-arrow-down"
+                      style="color: rgb(255, 255, 255)"
+                    ></i
+                  ></span>
+                </button>
+              </div>
+            </div></div
+        ></a>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      class="bg-gray-100 dark:bg-gray-950 border-t border-gray-200 dark:border-gray-800"
+    >
+      <div
+        class="w-full py-15 px-6 flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto gap-8"
+      >
+        <div class="flex flex-col items center md:items-start gap-4">
+          <span
+            ><img src="Assets/Foodie-copy.PNG" alt="" class="w-20 h-auto"
+          /></span>
+          <p
+            class="text-xs text-gray-500 dark:text-gray-400 max-w-xs text-center md:text-left"
+          >
+            Freshness delivered to your doorstep. The ultimate destination for
+            food lovers.
+          </p>
+        </div>
+        <div class="flex flex-wrap justify-center gap-8">
+          <a
+            href=""
+            class="font-['Epilogue'] text-xs text-gray-500 dark:text-gray-400 hover:text-red-700 transition-all"
+            >Privacy Policy</a
+          >
+          <a
+            href=""
+            class="font-['Epilogue'] text-xs text-gray-500 dark:text-gray-400 hover:text-red-700 transition-all"
+            >Terms of Service</a
+          >
+          <a
+            href=""
+            class="font-['Epilogue'] text-xs text-gray-500 dark:text-gray-400 hover:text-red-700 transition-all"
+            >Help Center</a
+          >
+          <a
+            href=""
+            class="font-['Epilogue'] text-xs text-gray-500 dark:text-gray-400 hover:text-red-700 transition-all"
+            >Careers</a
+          >
+        </div>
+        <div class="font-['Epilogue'] text-xs text-gray-500 dark:text-gray-400">
+          © 2026 Foodie Inc. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
