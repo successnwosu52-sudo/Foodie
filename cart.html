@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script
+      src="https://kit.fontawesome.com/11ab297816.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      body {
+        background-color: #f9f9f9;
+      }
+    </style>
+    <title>Foodie Website</title>
+  </head>
+  <body>
+    <!-- Top nav bar -->
+    <nav
+      class="sticky top-0 z-50 flex justify-between items-center px-6 py-4 w-full bg-white/95 backdrop-blur-md shadow-sm dark:shadow-none border-b border-gray-100"
+    >
+      <div class="flex items-center gap-8">
+        <span>
+          <img src="Assets/Foodie-copy.PNG" class="w-20 h-auto" />
+        </span>
+        <div class="hidden md:flex gap-6 items-center">
+          <a
+            class="font-md text-sm font-bold border-b-2 border-red-600 text-red-600"
+            href="index.html"
+            >Home</a
+          >
+          <a
+            class="font-md text-sm font-medium tracking-tight text-gray-600 hover:text-red-600 transition-color duration-200"
+            href="menu.html"
+            >Menu</a
+          >
+          <a
+            class="font-md text-sm font-medium tracking-tight text-gray-600 hover:text-red-600 transition-color duration-200"
+            href="#"
+            >Orders</a
+          >
+          <a
+            class="font-md text-sm font-medium tracking-tight text-gray-600 hover:text-red-600 transition-color duration-200"
+            href="checkout.html"
+            >Checkout</a
+          >
+          <a
+            class="font-md text-sm font-medium tracking-tight text-gray-600 hover:text-red-600 transition-color duration-200"
+            href="#"
+            >Contact</a
+          >
+        </div>
+      </div>
+      <div class="flex items-center gap-4">
+        <button class="p-2 text-gray-600 hover:bg-gray-200 rounded-full">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+
+        <a href="cart.html">
+          <button
+            class="p-2 text-gray-600 hover:bg-gray-200 rounded-full relative block"
+          >
+            <i class="fa-solid fa-cart-shopping"></i>
+            <b
+              class="cart-count rounded-full bg-red-700 px-1.5 py-0.5 text-xs text-white absolute top-[-10px] right-[-10px]"
+              >0</b
+            >
+          </button></a
+        >
+
+        <button class="p-2 text-gray-600 hover:bg-gray-200 rounded-full">
+          <i class="fa-solid fa-circle-user"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Cart page starts -->
+
+    <main class="max-w-7xl mx-auto px-6 py-10">
+      <div class="mb-6">
+        <h1 class="font-bold text-4xl">Your Cart</h1>
+        <p class="text-gray-400 font-medium mt-xs">
+          Review your item before checking out.
+        </p>
+      </div>
+    </main>
+
+    <!-- tables section -->
+    <!-- <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+        <div class="lg:col-span-8 space-y-md">
+          <div class="bg-white rounded-xl shadow-gray-300 overflow-hidden">
+            <table class="w-full text-left border-collapse">
+              <thead class="bg-taupe-50">
+                <tr
+                  class="text-gray-400 font-bold text-1xl uppercase tracking-wider"
+                >
+                  <th class="px-6 py-4">Product</th>
+                  <th class="px-6 py-4 text-center">Quantity</th>
+                  <th class="px-6 py-4 text-right">Price</th>
+                  <th class="px-6 py-4 text-right">Total</th>
+                  <th class="px-6 py-4"></th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200"> -->
+    <!-- Item 1 -->
+    <!-- <tr class="hover:bg-gray-100 transition-color group">
+                  <td class="px-6 py-4">
+                    <div class="flex items-center gap-6">
+                      <div
+                        class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0"
+                      >
+                        <img
+                          src="Assets/Double burger main page.jpg"
+                          alt=""
+                          class="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div>
+                        <h3 class="font-md text-lg">Cheese Burger</h3>
+                        <p class="text-gray-400 text-sm">
+                          Extra patty, No onions
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+                  td
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main> -->
+
+    <main>
+      <section class="grid gap-6 px-5 py-14 lg:grid-cols-[1fr_340px] md:px-14">
+        <div class="rounded-lg border border-[#d1d5dc] bg-white p-6 shadow-xl">
+          <div id="cart-list"></div>
+        </div>
+        <aside
+          class="rounded-lg border border-[#d1d5dc] bg-white p-6 shadow-xl lg:sticky lg:top-24"
+        >
+          <h2 class="mb-4 text-3xl font-bold">Order Summary</h2>
+          <div class="flex justify-between border-b border-[#d1d5dc] py-3">
+            <span>Subtotal</span><strong id="subtotal">$0.00</strong>
+          </div>
+          <div class="flex justify-between border-b border-[#d1d5dc] py-3">
+            <span>Service</span><strong id="service">$0.00</strong>
+          </div>
+          <div class="my-4 flex justify-between text-xl font-bold">
+            <span>Total</span><strong id="grand-total">$0.00</strong>
+          </div>
+          <a
+            class="block rounded-3xl bg-red-700 px-6 py-3 text-center font-extrabold text-white hover:scale-[1.02] active:scale-95 transition-all shadow-md shadow-gray-300"
+            href="checkout.html"
+            >Continue to Checkout</a
+          >
+          <button
+            class="mt-3 w-full rounded-3xl border border-[#C10007] px-6 py-3 font-extrabold text-red-500"
+            id="clear-cart"
+            type="button"
+          >
+            Clear cart
+          </button>
+        </aside>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      class="bg-gray-100 dark:bg-gray-950 border-t border-gray-200 dark:border-gray-800"
+    >
+      <div
+        class="w-full py-10 px-6 flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto gap-8"
+      >
+        <div class="flex flex-col items center md:items-start gap-4">
+          <span
+            ><img src="Assets/Foodie-copy.PNG" alt="" class="w-20 h-auto"
+          /></span>
+          <p
+            class="text-xs text-gray-500 dark:text-gray-400 max-w-xs text-center md:text-left"
+          >
+            © 2026 Foodie Inc. All rights reserved.
+          </p>
+        </div>
+        <div class="flex flex-wrap justify-center gap-8">
+          <a
+            href=""
+            class="font-['Epilogue'] text-xs text-gray-500 dark:text-gray-400 hover:text-red-700 transition-all"
+            >Privacy Policy</a
+          >
+          <a
+            href=""
+            class="font-['Epilogue'] text-xs text-gray-500 dark:text-gray-400 hover:text-red-700 transition-all"
+            >Terms of Service</a
+          >
+          <a
+            href=""
+            class="font-['Epilogue'] text-xs text-gray-500 dark:text-gray-400 hover:text-red-700 transition-all"
+            >Help Center</a
+          >
+          <a
+            href=""
+            class="font-['Epilogue'] text-xs text-gray-500 dark:text-gray-400 hover:text-red-700 transition-all"
+            >Careers</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

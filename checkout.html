@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script
+      src="https://kit.fontawesome.com/11ab297816.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      body {
+        background-color: #f9f9f9;
+      }
+    </style>
+    <title>Foodie Website</title>
+  </head>
+  <body>
+    <!-- Top nav bar -->
+    <nav
+      class="sticky top-0 z-50 flex justify-between items-center px-6 py-4 w-full bg-white/95 backdrop-blur-md shadow-sm dark:shadow-none border-b border-gray-100"
+    >
+      <div class="flex items-center gap-8">
+        <span>
+          <img src="Assets/Foodie-copy.PNG" class="w-20 h-auto" />
+        </span>
+        <div class="hidden md:flex gap-6 items-center">
+          <a
+            class="font-md text-sm font-bold border-b-2 border-red-600 text-red-600"
+            href="index.html"
+            >Home</a
+          >
+          <a
+            class="font-md text-sm font-medium tracking-tight text-gray-600 hover:text-red-600 transition-color duration-200"
+            href="menu.html"
+            >Menu</a
+          >
+          <a
+            class="font-md text-sm font-medium tracking-tight text-gray-600 hover:text-red-600 transition-color duration-200"
+            href="#"
+            >Orders</a
+          >
+          <a
+            class="font-md text-sm font-medium tracking-tight text-gray-600 hover:text-red-600 transition-color duration-200"
+            href="checkout.html"
+            >Checkout</a
+          >
+          <a
+            class="font-md text-sm font-medium tracking-tight text-gray-600 hover:text-red-600 transition-color duration-200"
+            href="#"
+            >Contact</a
+          >
+        </div>
+      </div>
+      <div class="flex items-center gap-4">
+        <button class="p-2 text-gray-600 hover:bg-gray-200 rounded-full">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+
+        <a href="cart.html">
+          <button
+            class="p-2 text-gray-600 hover:bg-gray-200 rounded-full relative block"
+          >
+            <i class="fa-solid fa-cart-shopping"></i>
+            <b
+              class="cart-count rounded-full bg-red-700 px-1.5 py-0.5 text-xs text-white absolute top-[-10px] right-[-10px]"
+              >0</b
+            >
+          </button></a
+        >
+
+        <button class="p-2 text-gray-600 hover:bg-gray-200 rounded-full">
+          <i class="fa-solid fa-circle-user"></i>
+        </button>
+      </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-6 py-10">
+      <div class="mb-6">
+        <h1 class="font-bold text-4xl">Checkout</h1>
+        <p class="font-medium text-md text-gray-400">
+          Complete your order details below to enjoy your meal.
+        </p>
+      </div>
+
+      <section class="grid gap-6 px-5 py-14 lg:grid-cols-[1fr_340px] md:px-14">
+        <form
+          class="grid gap-4 rounded-lg border border-[#d1d5dc] bg-white p-6 shadow-xl"
+          id="checkout-form"
+        >
+          <h2 class="text-3xl font-bold text-red-700">Delivery Details</h2>
+
+          <div class="grid gap-4 md:grid-cols-2">
+            <label class="grid gap-2 font-bold text-yellow-900"
+              >Name
+              <input
+                class="rounded-md border border-[#d1d5dc] bg-gray-100 p-3 font-normal"
+                required
+                type="text"
+                placeholder="Your name"
+              />
+            </label>
+
+            <label class="grid gap-2 font-bold text-yellow-900"
+              >Phone
+              <input
+                class="rounded-md border border-[#d1d5dc] bg-gray-100 p-3 font-normal"
+                required
+                type="tel"
+                placeholder="Phone number"
+              />
+            </label>
+          </div>
+
+          <label class="grid gap-2 font-bold text-yellow-900"
+            >Email
+            <input
+              class="rounded-md border border-[#d1d5dc] bg-gray-100 p-3 font-normal"
+              required
+              type="email"
+              placeholder="you@example.com"
+            />
+          </label>
+
+          <label class="grid gap-2 font-bold text-yellow-900"
+            >Address
+            <textarea
+              class="rounded-md border border-[#d1d5dc] bg-gray-100 p-3 font-normal"
+              required
+              rows="4"
+              placeholder="Street, city, state"
+            >
+            </textarea>
+          </label>
+
+          <label class="grid gap-2 font-bold text-yellow-900"
+            >Order type
+            <select
+              class="rounded-md border border-[#d1d5dc] bg-gray-100 p-3 font-normal"
+            >
+              <option>Delivery</option>
+              <option>Pickup</option>
+            </select></label
+          >
+
+          <label class="grid gap-2 font-bold text-yellow-900"
+            >Payment
+            <select
+              class="rounded-md border border-[#d1d5dc] bg-gray-100 p-3 font-normal"
+            >
+              <option>Card on delivery</option>
+              <option>Cash on delivery</option>
+              <option>Mobile payment</option>
+            </select></label
+          >
+
+          <button
+            class="rounded-4xl bg-red-700 px-6 py-4 font-bold text-lg text-white shadow-md shadow-gray-300 hover:scale-[1.02] active:scale-95 transition-all"
+            type="submit"
+          >
+            Place Order
+          </button>
+          <p
+            class="text-center text-xs text-on-surface-variant text-yellow-900 mt-4"
+          >
+            By placing an order, you agree to our Terms and Conditions.
+          </p>
+
+          <!-- <div class="mt-4 bg-gray-100 p-3 rounded-xl flex items-start gap-2">
+            <span class="material-symbols-outlined"> verified </span>
+            <p class="text-xs text-on-surface-variant">
+              Your order is protected by our Foodie Guarantee. Not satisfied?
+              Get a full refund.
+            </p>
+          </div> -->
+
+          <p class="min-h-6 font-black text-green-700" id="checkout-status"></p>
+        </form>
+
+        <aside
+          class="rounded-lg border border-[#d1d5dc] bg-white p-6 shadow-xl lg:sticky lg:top-24"
+        >
+          <h2 class="mb-4 text-3xl font-bold text-red-700">Checkout Summary</h2>
+          <div id="checkout-items" class="mb-5 grid gap-3"></div>
+          <div class="flex justify-between text-xl font-black">
+            <span>Total</span>
+            <strong id="checkout-total">$0.00</strong>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      class="bg-gray-100 dark:bg-gray-950 border-t border-gray-200 dark:border-gray-800"
+    >
+      <div
+        class="w-full py-10 px-6 flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto gap-8"
+      >
+        <div class="flex flex-col items center md:items-start gap-4">
+          <span
+            ><img src="Assets/Foodie-copy.PNG" alt="" class="w-20 h-auto"
+          /></span>
+          <p
+            class="text-xs text-gray-500 dark:text-gray-400 max-w-xs text-center md:text-left"
+          >
+            © 2026 Foodie Inc. All rights reserved.
+          </p>
+        </div>
+        <div class="flex flex-wrap justify-center gap-8">
+          <a
+            href=""
+            class="font-['Epilogue'] text-xs text-gray-500 dark:text-gray-400 hover:text-red-700 transition-all"
+            >Privacy Policy</a
+          >
+          <a
+            href=""
+            class="font-['Epilogue'] text-xs text-gray-500 dark:text-gray-400 hover:text-red-700 transition-all"
+            >Terms of Service</a
+          >
+          <a
+            href=""
+            class="font-['Epilogue'] text-xs text-gray-500 dark:text-gray-400 hover:text-red-700 transition-all"
+            >Help Center</a
+          >
+          <a
+            href=""
+            class="font-['Epilogue'] text-xs text-gray-500 dark:text-gray-400 hover:text-red-700 transition-all"
+            >Careers</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

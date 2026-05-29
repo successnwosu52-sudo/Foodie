@@ -27,23 +27,23 @@
         <div class="hidden md:flex gap-6 items-center">
           <a
             class="font-md text-sm font-bold border-b-2 border-red-600 text-red-600"
-            href="#"
+            href="index.html"
             >Home</a
           >
           <a
             class="font-md text-sm font-medium tracking-tight text-gray-600 hover:text-red-600 transition-color duration-200"
-            href="#"
+            href="menu.html"
             >Menu</a
           >
           <a
             class="font-md text-sm font-medium tracking-tight text-gray-600 hover:text-red-600 transition-color duration-200"
             href="#"
-            >Deals</a
+            >Orders</a
           >
           <a
             class="font-md text-sm font-medium tracking-tight text-gray-600 hover:text-red-600 transition-color duration-200"
-            href="#"
-            >About</a
+            href="checkout.html"
+            >Checkout</a
           >
           <a
             class="font-md text-sm font-medium tracking-tight text-gray-600 hover:text-red-600 transition-color duration-200"
@@ -53,15 +53,23 @@
         </div>
       </div>
       <div class="flex items-center gap-4">
-        <button class="p-2 text-gray-600 hover:bg-gray-50 rounded-full">
+        <button class="p-2 text-gray-600 hover:bg-gray-200 rounded-full">
           <i class="fa-solid fa-magnifying-glass"></i>
         </button>
 
-        <button class="p-2 text-gray-600 hover:bg-gray-50 rounded-full">
-          <i class="fa-solid fa-cart-shopping"></i>
-        </button>
+        <a href="cart.html">
+          <button
+            class="p-2 text-gray-600 hover:bg-gray-200 rounded-full relative block"
+          >
+            <i class="fa-solid fa-cart-shopping"></i>
+            <b
+              class="cart-count rounded-full bg-red-700 px-1.5 py-0.5 text-xs text-white absolute top-[-10px] right-[-10px]"
+              >0</b
+            >
+          </button></a
+        >
 
-        <button class="p-2 text-gray-600 hover:bg-gray-50 rounded-full">
+        <button class="p-2 text-gray-600 hover:bg-gray-200 rounded-full">
           <i class="fa-solid fa-circle-user"></i>
         </button>
       </div>
@@ -87,7 +95,7 @@
             </button></a
           >
 
-          <a href=""
+          <a href="#american"
             ><button
               class="px-6 py-2 rounded-full bg-gray-100 text-yellow-900 font-bold transform transition hover:-translate-y-0.5 cursor-pointer"
             >
@@ -95,7 +103,7 @@
             </button></a
           >
 
-          <a href=""
+          <a href="#chinese"
             ><button
               class="px-6 py-2 rounded-full bg-gray-100 text-yellow-900 font-bold transform transition hover:-translate-y-0.5 cursor-pointer"
             >
@@ -103,7 +111,7 @@
             </button></a
           >
 
-          <a href=""
+          <a href="#african"
             ><button
               class="px-6 py-2 rounded-full bg-gray-100 text-yellow-900 font-bold transform transition hover:-translate-y-0.5 cursor-pointer"
             >
@@ -111,7 +119,7 @@
             </button></a
           >
 
-          <a href=""
+          <a href="#snacks"
             ><button
               class="px-6 py-2 rounded-full bg-gray-100 text-yellow-900 font-bold transform transition hover:-translate-y-0.5 cursor-pointer"
             >
@@ -119,7 +127,7 @@
             </button></a
           >
 
-          <a href=""
+          <a href="#drinks"
             ><button
               class="px-6 py-2 rounded-full bg-gray-100 text-yellow-900 font-bold transform transition hover:-translate-y-0.5 cursor-pointer"
             >
@@ -135,7 +143,7 @@
         class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-gutters gap-4"
       >
         <!-- American dishes -->
-        <a href=""
+        <a href="" id="american"
           ><div
             class="bg-white rounded-xl overflow-hidden shadow-md shadow-gray-300 flex flex-col group hover:outline hover:outline-variant transition-all duration-400 cursor-pointer"
           >
@@ -177,7 +185,7 @@
             </div></div
         ></a>
 
-        <a href=""
+        <a href="#american"
           ><div
             class="bg-white rounded-xl overflow-hidden shadow-md shadow-gray-300 flex flex-col group hover:outline hover:outline-variant transition-all duration-400 cursor-pointer"
           >
@@ -304,7 +312,7 @@
         ></a>
 
         <!-- Chinese dishes -->
-        <a href=""
+        <a href="" id="chinese"
           ><div
             class="bg-white rounded-xl overflow-hidden shadow-md shadow-gray-300 flex flex-col group hover:outline hover:outline-variant transition-all duration-400 cursor-pointer"
           >
@@ -473,7 +481,7 @@
 
         <!-- African dishes -->
 
-        <a href=""
+        <a href="" id="african"
           ><div
             class="bg-white rounded-xl overflow-hidden shadow-md shadow-gray-300 flex flex-col group hover:outline hover:outline-variant transition-all duration-400 cursor-pointer"
           >
@@ -642,7 +650,7 @@
         ></a>
 
         <!-- Bevrages -->
-        <a href=""
+        <a href="" id="drinks"
           ><div
             class="bg-white rounded-xl overflow-hidden shadow-md shadow-gray-300 flex flex-col group hover:outline hover:outline-variant transition-all duration-400 cursor-pointer"
           >
@@ -813,7 +821,7 @@
       class="bg-gray-100 dark:bg-gray-950 border-t border-gray-200 dark:border-gray-800"
     >
       <div
-        class="w-full py-15 px-6 flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto gap-8"
+        class="w-full py-10 px-6 flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto gap-8"
       >
         <div class="flex flex-col items center md:items-start gap-4">
           <span

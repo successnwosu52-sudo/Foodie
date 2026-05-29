@@ -1,19 +1,19 @@
 {
   "folders": [
-	{
-		"path": "../My random designs"
-	},
-	{
-		"path": "../Nav bar"
-	},
-	{
-		"path": "../Html Tutorial"
-	},
-	{
-		"path": "."
-	}
-],
+    {
+      "path": "../My random designs",
+    },
+    {
+      "path": "../Nav bar",
+    },
+    {
+      "path": "../Html Tutorial",
+    },
+    {
+      "path": ".",
+    },
+  ],
   "settings": {
-    "liveServer.settings.multiRootWorkspaceName": "Foodie website"
-  }
+    "liveServer.settings.multiRootWorkspaceName": "Foodie website",
+  },
 }
