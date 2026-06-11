@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/Assets/Foodie-copy.PNG" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script
+      src="https://kit.fontawesome.com/11ab297816.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      body {
+        background-color: #f9f9f9;
+      }
+    </style>
+    <title>Foodie Website</title>
+  </head>
+  <body>
+    <!-- Top nav bar -->
+    <nav
+      class="sticky top-0 z-50 flex justify-between items-center px-6 py-4 w-full bg-white/95 backdrop-blur-md shadow-sm dark:shadow-none border-b border-gray-100"
+    >
+      <div class="flex items-center gap-20">
+        <span>
+          <img src="Assets/Foodie-copy.PNG" class="w-20 h-auto" />
+        </span>
+        <div class="hidden md:flex gap-6 items-center">
+          <a
+            class="font-md text-sm font-bold border-b-2 border-red-600 text-red-600"
+            href="index.html"
+            >Home</a
+          >
+          <a
+            class="font-md text-sm font-medium tracking-tight text-gray-600 hover:text-red-600 transition-color duration-200"
+            href="menu.html"
+            >Menu</a
+          >
+          <a
+            class="font-md text-sm font-medium tracking-tight text-gray-600 hover:text-red-600 transition-color duration-200"
+            href="#"
+            >Orders</a
+          >
+          <a
+            class="font-md text-sm font-medium tracking-tight text-gray-600 hover:text-red-600 transition-color duration-200"
+            href="checkout.html"
+            >Checkout</a
+          >
+          <a
+            class="font-md text-sm font-medium tracking-tight text-gray-600 hover:text-red-600 transition-color duration-200"
+            href="#"
+            >Contact</a
+          >
+        </div>
+      </div>
+      <div class="flex items-center gap-4">
+        <button class="p-2 text-gray-600 hover:bg-gray-200 rounded-full">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+
+        <a href="cart.html">
+          <button
+            class="p-2 text-gray-600 hover:bg-gray-200 rounded-full relative block"
+          >
+            <i class="fa-solid fa-cart-shopping"></i>
+            <b
+              class="cart-count rounded-full bg-red-700 px-1.5 py-0.5 text-xs text-white absolute top-[-10px] right-[-10px]"
+              >0</b
+            >
+          </button></a
+        >
+
+        <a href="profile.html"><button class="p-2 text-gray-600 hover:bg-gray-200 rounded-full">
+          <i class="fa-solid fa-circle-user"></i></a>
+        </button>
+      </div>
+    </nav>
+
+    <main class="grid max-w-4xl place-items-center p-6 mx-auto mt-6">
+    <section class="grid w-full max-w-5xl overflow-hidden border border-red-700 bg-white lg:grid-cols-2 rounded-2xl shadow-2xl ">
+      <div class="min-h-72 bg-cover bg-center lg:min-h-[540px]"> 
+       <img src="Assets/login cover.jpg" alt="">
+      </div>
+
+      <form id="login-form" class="grid content-center gap-4 p-8 md:p-14">
+
+        <p class="text-sm font-extrabold uppercase tracking-widest text-red-700">Welcome back</p>
+        <h1 class="text-4xl text-black font-extrabold">Login to Foodie</h1>
+
+        <label class="grid gap-2 font-black">Email
+         <input class="rounded-md border border-red-700 bg-gray-50 p-3 font-normal" type="email" placeholder="Enter email" required>
+        </label>
+
+        <label class="grid gap-2 font-black">Password
+         <input class="rounded-md border border-red-700 bg-gray-50 p-3 font-normal" type="password" placeholder="Enter password" required>
+        </label>
+
+        <button class="rounded-md bg-red-700 px-6 py-4 text-white font-bold cursor-pointer hover:scale-[1.02] active:scale-95 transition-all shadow-md shadow-gray-300 " type="submit">Log In</button>
+
+        <p class="min-h-6 font-bold text-green-700" id="login-status"></p>
+        <p class="text-gray-500">New to Foodie? Create a profile after checkout and save your favorite meals.</p>
+      </form>
+
+    </section>
+  </main>
+  </body>
+</html>
