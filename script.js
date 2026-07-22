@@ -1,5 +1,6 @@
 // Mobile Menu Toggle
 const menuBtn = document.getElementById('menuBtn')
+const desktopMenuBtn = document.getElementById('desktopMenuBtn')
 const navLinks = document.getElementById('navLinks')
 
 menuBtn.addEventListener('click', (event) => {
@@ -7,7 +8,14 @@ menuBtn.addEventListener('click', (event) => {
   event.stopPropagation()
 })
 
-window.addEventListener('click', () => {
+if (desktopMenuBtn) {
+  desktopMenuBtn.addEventListener('click', (event) => {
+    navLinks.classList.toggle('show')
+    event.stopPropagation()
+  })
+}
+
+window.addEventListener('click', (event) => {
   if (navLinks.classList.contains('show')) {
     navLinks.classList.remove('show')
   }
@@ -103,14 +111,15 @@ function loadCart() {
   cartItems.innerHTML = ''
   let total = 0
   if (cart.length === 0) {
-    cartItems.innerHTML = '<p class="text-center py-10">Your cart is empty</p>' 
+    cartItems.innerHTML = '<p class="text-center py-10">Your cart is empty</p>'
     totalEl.textContent = '0.00'
     return
   }
-  cart.forEach(item => {
+  cart.forEach((item) => {
     total == item.price * item.qty
-     const div = document.createElement('div')
-     div.className = 'flex flex-col sm:flex-row items-center justify-between gap-4'
+    const div = document.createElement('div')
+    div.className =
+      'flex flex-col sm:flex-row items-center justify-between gap-4'
     div.innerHTML = `
       <div class="flex items-center gap-4">
         <div>
@@ -124,15 +133,16 @@ function loadCart() {
         <button class="qty-btn" data-action="increase" data-id="${item.id}">+</button>
         <button class="remove-btn text-red-500" data-id="${item.id}">Remove</button>
       </div>`
-      cartItems.appendChild(div)
+    cartItems.appendChild(div)
   })
-      totalEl.textContent = total.toFixed(2);
+  totalEl.textContent = total.toFixed(2)
 }
 
-document.addEventListener('click', e => {
+document.addEventListener('click', (e) => {
   if (e.target.classList.contains('qty-btn')) {
     const id = parseInt(e.target.dataset.id)
     const action = e.target.dataset.action
     let cart = JSON.parse(localStorage.getItem('cart')) || []
-    const item = cart.find(i => i.id === id)
+    const item = cart.find((i) => i.id === id)
+  }
 })
