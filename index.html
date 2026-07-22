@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/Assets/Foodie-copy.PNG">
+    <link rel="stylesheet" href="foodie.css">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script
       src="https://kit.fontawesome.com/11ab297816.js"
@@ -23,15 +24,16 @@
   <body>
     <!-- Top nav bar -->
     <nav
-      class="sticky top-0 z-50 flex justify-between items-center px-6 py-4 w-full bg-white/95 backdrop-blur-md shadow-sm dark:shadow-none border-b border-gray-100"
+      class=" navbar relative sticky top-0 z-50 flex justify-between items-center px-6 py-4 w-full bg-white/95 
+      backdrop-blur-md shadow-sm dark:shadow-none border-b border-gray-100 "
     >
-      <div class="flex items-center gap-20">
+     <div class="flex items-center gap-20">
         <span>
           <img src="Assets/Foodie-copy.PNG" class="w-20 h-auto" />
         </span>
         <div class="hidden md:flex gap-6 items-center">
           <a
-            class="font-md text-sm font-bold border-b-2 border-red-600 text-gray-600 hover:text-red-600 transition-color duration-200"
+            class="font-md text-sm font-bold text-gray-600 hover:text-red-600 transition-color duration-200"
             href="index.html"
             >Home</a
           >
@@ -47,20 +49,38 @@
           >
           
         </div>
-      </div>
+ </div>
+    
+   
       <div class="flex items-center gap-4">
-        <button class="p-2 text-gray-600 hover:bg-gray-200 rounded-full">
+        <button class="p-2 hidden md:flex hover:bg-gray-200 rounded-full">
           <i class="fa-solid fa-magnifying-glass"></i>
         </button>
 
         <a href="cart.html">
-          <button class="p-2 text-gray-600 hover:bg-gray-200 rounded-full relative block">
-            <i class="fa-solid fa-cart-shopping"></i>  <b class="cart-count rounded-full bg-red-700 px-1.5 py-0.5 text-xs text-white absolute top-[-10px] right-[-10px]">0</b></button
+          <button class="p-2 hidden md:flex text-gray-600 hover:bg-gray-200 rounded-full relative block">
+            <i class="fa-solid fa-cart-shopping"></i>  
+            <b class="cart-count hidden md:flex rounded-full bg-red-700 px-1.5 py-0.5 text-xs text-white absolute top-[-10px] right-[-10px]">0</b>
+            </button
         ></a>
 
-       <a href="profile.html"> <button class="p-2 text-gray-600 hover:bg-gray-200 rounded-full">
-          <i class="fa-solid fa-circle-user"></i></a>
-        </button>
+       <a href="profile.html"> <button class="p-2 text-gray-600 hover:bg-gray-200 rounded-full hidden md:flex">
+          <i class="fa-solid fa-circle-user"></i>
+        </button></a>
+
+<!-- Mobile view menu -->
+        <div class="menu-container text-gray-500 font-bold text-lg px-2">
+          <button id="menuBtn" class="mobileMenu ">Menu</button>
+
+    <ul id="navLinks" class="nav-content">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="menu.html">Menu</a></li>
+    <li><a href="cart.html">Cart</a></li>
+    <li><a href="#orders">Orders</a></li>
+    <li><a href="profile.html">Profile</a></li>
+    <li><a href="login.html">Log Out</a></li>
+  </ul>
+</div>
       </div>
     </nav>
 
@@ -379,5 +399,7 @@
       <span class="material-symbols-outlined"> local_dining</span>
       <span class="hidden sm:inline">Order Now</span>
     </button></a>
+
+    <script src="script.js"> </script>
   </body>
 </html>

@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/Assets/Foodie-copy.PNG" />
+    <link rel="stylesheet" href="foodie.css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script
       src="https://kit.fontawesome.com/11ab297816.js"
@@ -19,7 +20,7 @@
   <body>
     <!-- Top nav bar -->
     <nav
-      class="sticky top-0 z-50 flex justify-between items-center px-6 py-4 w-full bg-white/95 backdrop-blur-md shadow-sm dark:shadow-none border-b border-gray-100"
+      class="navbar relative sticky top-0 z-50 flex justify-between items-center px-6 py-4 w-full bg-white/95 backdrop-blur-md shadow-sm dark:shadow-none border-b border-gray-100"
     >
       <div class="flex items-center gap-20">
         <span>
@@ -27,7 +28,7 @@
         </span>
         <div class="hidden md:flex gap-6 items-center">
           <a
-            class="font-md text-sm font-bold border-b-2 border-red-600 text-gray-600 hover:text-red-600 transition-color duration-200"
+            class="font-md text-sm font-bold text-gray-600 hover:text-red-600 transition-color duration-200"
             href="index.html"
             >Home</a
           >
@@ -43,27 +44,46 @@
           >
         </div>
       </div>
+
       <div class="flex items-center gap-4">
-        <button class="p-2 text-gray-600 hover:bg-gray-200 rounded-full">
+        <button
+          class="p-2 hidden md:flex text-gray-600 hover:bg-gray-200 rounded-full"
+        >
           <i class="fa-solid fa-magnifying-glass"></i>
         </button>
 
         <a href="cart.html">
           <button
-            class="p-2 text-gray-600 hover:bg-gray-200 rounded-full relative block"
+            class="p-2 hidden md:flex text-gray-600 hover:bg-gray-200 rounded-full relative block"
           >
             <i class="fa-solid fa-cart-shopping"></i>
             <b
-              class="cart-count rounded-full bg-red-700 px-1.5 py-0.5 text-xs text-white absolute top-[-10px] right-[-10px]"
+              id="cart-count"
+              class="rounded-full bg-red-700 px-1.5 py-0.5 text-xs text-white absolute top-[-10px] right-[-10px]"
               >0</b
             >
           </button></a
         >
 
         <a href="profile.html"
-          ><button class="p-2 text-gray-600 hover:bg-gray-200 rounded-full">
+          ><button
+            class="p-2 hidden md:flex text-gray-600 hover:bg-gray-200 rounded-full"
+          >
             <i class="fa-solid fa-circle-user"></i></button
         ></a>
+        <!-- Mobile view menu -->
+        <div class="menu-container text-gray-500 font-bold text-lg px-2">
+          <button id="menuBtn" class="mobileMenu">Menu</button>
+
+          <ul id="navLinks" class="nav-content">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="#orders">Orders</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="login.html">Log Out</a></li>
+          </ul>
+        </div>
       </div>
     </nav>
 
@@ -78,50 +98,62 @@
           ingredients and bold flavors delivered staight to your door.
         </p>
 
-        <div class="flex flex-wrap gap-3">
+        <div class="filter-bar flex flex-wrap gap-3">
           <a href=""
             ><button
-              class="px-6 py-2 rounded-full bg-red-700 text-white font-bold shadow-md transform transition hover:-translate-y-0.5 cursor-pointer"
+              class="filter-btn px-4 py-2 rounded-full bg-red-700 text-white font-bold shadow-md transform transition hover:-translate-y-0.5 cursor-pointer"
+              data-filter="all"
+              type="button"
             >
               All
             </button></a
           >
 
-          <a href="#american"
+          <a href="#"
             ><button
-              class="px-6 py-2 rounded-full bg-gray-100 text-yellow-900 font-bold transform transition hover:-translate-y-0.5 cursor-pointer"
+              class="filter-btn px-6 py-2 rounded-full bg-gray-100 text-yellow-900 font-bold transform transition hover:-translate-y-0.5 cursor-pointer"
+              data-filter="american"
+              type="button"
             >
               American
             </button></a
           >
 
-          <a href="#chinese"
+          <a href="#"
             ><button
-              class="px-6 py-2 rounded-full bg-gray-100 text-yellow-900 font-bold transform transition hover:-translate-y-0.5 cursor-pointer"
+              class="filter-btn px-6 py-2 rounded-full bg-gray-100 text-yellow-900 font-bold transform transition hover:-translate-y-0.5 cursor-pointer"
+              data-filter="chinese"
+              type="button"
             >
               Chinese
             </button></a
           >
 
-          <a href="#african"
+          <a href="#"
             ><button
-              class="px-6 py-2 rounded-full bg-gray-100 text-yellow-900 font-bold transform transition hover:-translate-y-0.5 cursor-pointer"
+              class="filter-btn px-6 py-2 rounded-full bg-gray-100 text-yellow-900 font-bold transform transition hover:-translate-y-0.5 cursor-pointer"
+              data-filter="african"
+              type="button"
             >
               African
             </button></a
           >
 
-          <a href="#snacks"
+          <!-- <a href="#"
             ><button
-              class="px-6 py-2 rounded-full bg-gray-100 text-yellow-900 font-bold transform transition hover:-translate-y-0.5 cursor-pointer"
+              class="filter-btn px-6 py-2 rounded-full bg-gray-100 text-yellow-900 font-bold transform transition hover:-translate-y-0.5 cursor-pointer"
+              data-filter="snacks"
+              type="button"
             >
               Snacks
             </button></a
-          >
+          > -->
 
-          <a href="#drinks"
+          <a href="#"
             ><button
-              class="px-6 py-2 rounded-full bg-gray-100 text-yellow-900 font-bold transform transition hover:-translate-y-0.5 cursor-pointer"
+              class="filter-btn px-6 py-2 rounded-full bg-gray-100 text-yellow-900 font-bold transform transition hover:-translate-y-0.5 cursor-pointer"
+              data-filter="drinks"
+              type="button"
             >
               Drinks
             </button></a
@@ -135,9 +167,10 @@
         class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-gutters gap-4"
       >
         <!-- American dishes -->
-        <a href="" id="american"
+        <a href=""
           ><div
-            class="bg-white rounded-xl overflow-hidden shadow-md shadow-gray-300 flex flex-col group hover:outline hover:outline-variant transition-all duration-400 cursor-pointer"
+            class="bg-white rounded-xl overflow-hidden shadow-md shadow-gray-300 flex flex-col group hover:outline hover:outline-variant transition-all duration-400 cursor-pointer menu-items"
+            data-category="american"
           >
             <div class="aspect-square w-full overflow-hidden">
               <img
@@ -163,8 +196,12 @@
               </p>
               <div class="mt-auto flex items-center justify-between">
                 <span class="font-bold text-red-700">$5.49</span>
+
                 <button
-                  class="bg-red-600 text-white p-2 rounded-full flex items-center justify-center hover:bg-red-700 active:scale-90 transition all shadow-md"
+                  class="add-to-cart-btn bg-red-600 text-white p-2 rounded-full flex items-center justify-center hover:bg-red-700 active:scale-90 transition all shadow-md"
+                  data-id="1"
+                  data-price="5.49"
+                  data-name="Premium Beef Patty"
                 >
                   <span>
                     <i
@@ -173,13 +210,17 @@
                     ></i
                   ></span>
                 </button>
-              </div>
-            </div></div
-        ></a>
 
-        <a href="#american"
+                <!-- <div id="toast-container" class="toast-container"></div> -->
+              </div>
+            </div>
+          </div></a
+        >
+
+        <a href="#"
           ><div
-            class="bg-white rounded-xl overflow-hidden shadow-md shadow-gray-300 flex flex-col group hover:outline hover:outline-variant transition-all duration-400 cursor-pointer"
+            class="bg-white rounded-xl overflow-hidden shadow-md shadow-gray-300 flex flex-col group hover:outline hover:outline-variant transition-all duration-400 cursor-pointer menu-items"
+            data-category="american"
           >
             <div class="aspect-square w-full overflow-hidden">
               <img
@@ -206,7 +247,10 @@
               <div class="mt-auto flex items-center justify-between">
                 <span class="font-bold text-red-700">$12.99</span>
                 <button
-                  class="bg-red-600 text-white p-2 rounded-full flex items-center justify-center hover:bg-red-700 active:scale-90 transition all shadow-md"
+                  class="add-to-cart-btn bg-red-600 text-white p-2 rounded-full flex items-center justify-center hover:bg-red-700 active:scale-90 transition all shadow-md"
+                  data-id="2"
+                  data-price="12.99"
+                  data-name="Pizza"
                 >
                   <span>
                     <i
@@ -221,7 +265,8 @@
 
         <a href=""
           ><div
-            class="bg-white rounded-xl overflow-hidden shadow-md shadow-gray-300 flex flex-col group hover:outline hover:outline-variant transition-all duration-400 cursor-pointer"
+            class="bg-white rounded-xl overflow-hidden shadow-md shadow-gray-300 flex flex-col group hover:outline hover:outline-variant transition-all duration-400 cursor-pointer menu-items"
+            data-category="american"
           >
             <div class="aspect-square w-full overflow-hidden">
               <img
@@ -248,7 +293,10 @@
               <div class="mt-auto flex items-center justify-between">
                 <span class="font-bold text-red-700">$5.99</span>
                 <button
-                  class="bg-red-600 text-white p-2 rounded-full flex items-center justify-center hover:bg-red-700 active:scale-90 transition all shadow-md"
+                  class="add-to-cart-btn bg-red-600 text-white p-2 rounded-full flex items-center justify-center hover:bg-red-700 active:scale-90 transition all shadow-md"
+                  data-id="3"
+                  data-price="5.99"
+                  data-name="Chicken & Chips"
                 >
                   <span>
                     <i
@@ -263,7 +311,8 @@
 
         <a href=""
           ><div
-            class="bg-white rounded-xl overflow-hidden shadow-md shadow-gray-300 flex flex-col group hover:outline hover:outline-variant transition-all duration-400 cursor-pointer"
+            class="bg-white rounded-xl overflow-hidden shadow-md shadow-gray-300 flex flex-col group hover:outline hover:outline-variant transition-all duration-400 cursor-pointer menu-items"
+            data-category="american"
           >
             <div class="aspect-square w-full overflow-hidden">
               <img
@@ -290,7 +339,10 @@
               <div class="mt-auto flex items-center justify-between">
                 <span class="font-bold text-red-700">$6.49</span>
                 <button
-                  class="bg-red-600 text-white p-2 rounded-full flex items-center justify-center hover:bg-red-700 active:scale-90 transition all shadow-md"
+                  class="add-to-cart-btn bg-red-600 text-white p-2 rounded-full flex items-center justify-center hover:bg-red-700 active:scale-90 transition all shadow-md"
+                  data-id="4"
+                  data-price="6.49"
+                  data-name="Chicken Wrap"
                 >
                   <span>
                     <i
@@ -306,7 +358,8 @@
         <!-- Chinese dishes -->
         <a href="" id="chinese"
           ><div
-            class="bg-white rounded-xl overflow-hidden shadow-md shadow-gray-300 flex flex-col group hover:outline hover:outline-variant transition-all duration-400 cursor-pointer"
+            class="bg-white rounded-xl overflow-hidden shadow-md shadow-gray-300 flex flex-col group hover:outline hover:outline-variant transition-all duration-400 cursor-pointer menu-items"
+            data-category="chinese"
           >
             <div class="aspect-square w-full overflow-hidden">
               <img
@@ -333,7 +386,10 @@
               <div class="mt-auto flex items-center justify-between">
                 <span class="font-bold text-red-700">$9.99</span>
                 <button
-                  class="bg-red-600 text-white p-2 rounded-full flex items-center justify-center hover:bg-red-700 active:scale-90 transition all shadow-md"
+                  class="add-to-cart-btn bg-red-600 text-white p-2 rounded-full flex items-center justify-center hover:bg-red-700 active:scale-90 transition all shadow-md"
+                  data-id="5"
+                  data-price="9.99"
+                  data-name="Sushi"
                 >
                   <span>
                     <i
@@ -348,7 +404,8 @@
 
         <a href=""
           ><div
-            class="bg-white rounded-xl overflow-hidden shadow-md shadow-gray-300 flex flex-col group hover:outline hover:outline-variant transition-all duration-400 cursor-pointer"
+            class="bg-white rounded-xl overflow-hidden shadow-md shadow-gray-300 flex flex-col group hover:outline hover:outline-variant transition-all duration-400 cursor-pointer menu-items"
+            data-category="chinese"
           >
             <div class="aspect-square w-full overflow-hidden">
               <img
@@ -375,7 +432,10 @@
               <div class="mt-auto flex items-center justify-between">
                 <span class="font-bold text-red-700">$10.49</span>
                 <button
-                  class="bg-red-600 text-white p-2 rounded-full flex items-center justify-center hover:bg-red-700 active:scale-90 transition all shadow-md"
+                  class="add-to-cart-btn bg-red-600 text-white p-2 rounded-full flex items-center justify-center hover:bg-red-700 active:scale-90 transition all shadow-md"
+                  data-id="6"
+                  data-price="10.49"
+                  data-name="Dumplings"
                 >
                   <span>
                     <i
@@ -390,7 +450,8 @@
 
         <a href=""
           ><div
-            class="bg-white rounded-xl overflow-hidden shadow-md shadow-gray-300 flex flex-col group hover:outline hover:outline-variant transition-all duration-400 cursor-pointer"
+            class="bg-white rounded-xl overflow-hidden shadow-md shadow-gray-300 flex flex-col group hover:outline hover:outline-variant transition-all duration-400 cursor-pointer menu-items"
+            data-category="chinese"
           >
             <div class="aspect-square w-full overflow-hidden">
               <img
@@ -416,7 +477,10 @@
               <div class="mt-auto flex items-center justify-between">
                 <span class="font-bold text-red-700">$12.99</span>
                 <button
-                  class="bg-red-600 text-white p-2 rounded-full flex items-center justify-center hover:bg-red-700 active:scale-90 transition all shadow-md"
+                  class="add-to-cart-btn bg-red-600 text-white p-2 rounded-full flex items-center justify-center hover:bg-red-700 active:scale-90 transition all shadow-md"
+                  data-id="7"
+                  data-price="12.99"
+                  data-name="Orange Chicken"
                 >
                   <span>
                     <i
@@ -431,7 +495,8 @@
 
         <a href=""
           ><div
-            class="bg-white rounded-xl overflow-hidden shadow-md shadow-gray-300 flex flex-col group hover:outline hover:outline-variant transition-all duration-400 cursor-pointer"
+            class="bg-white rounded-xl overflow-hidden shadow-md shadow-gray-300 flex flex-col group hover:outline hover:outline-variant transition-all duration-400 cursor-pointer menu-items"
+            data-category="chinese"
           >
             <div class="aspect-square w-full overflow-hidden">
               <img
@@ -458,7 +523,10 @@
               <div class="mt-auto flex items-center justify-between">
                 <span class="font-bold text-red-700">$8.50</span>
                 <button
-                  class="bg-red-600 text-white p-2 rounded-full flex items-center justify-center hover:bg-red-700 active:scale-90 transition all shadow-md"
+                  class="add-to-cart-btn bg-red-600 text-white p-2 rounded-full flex items-center justify-center hover:bg-red-700 active:scale-90 transition all shadow-md"
+                  data-id="8"
+                  data-price="8.50"
+                  data-name="Ramen"
                 >
                   <span>
                     <i
@@ -475,7 +543,8 @@
 
         <a href="" id="african"
           ><div
-            class="bg-white rounded-xl overflow-hidden shadow-md shadow-gray-300 flex flex-col group hover:outline hover:outline-variant transition-all duration-400 cursor-pointer"
+            class="bg-white rounded-xl overflow-hidden shadow-md shadow-gray-300 flex flex-col group hover:outline hover:outline-variant transition-all duration-400 cursor-pointer menu-items"
+            data-category="african"
           >
             <div class="aspect-square w-full overflow-hidden">
               <img
@@ -502,7 +571,10 @@
               <div class="mt-auto flex items-center justify-between">
                 <span class="font-bold text-red-700">$5.49</span>
                 <button
-                  class="bg-red-600 text-white p-2 rounded-full flex items-center justify-center hover:bg-red-700 active:scale-90 transition all shadow-md"
+                  class="add-to-cart-btn bg-red-600 text-white p-2 rounded-full flex items-center justify-center hover:bg-red-700 active:scale-90 transition all shadow-md"
+                  data-id="9"
+                  data-price="5.49"
+                  data-name="Moi Moi"
                 >
                   <span>
                     <i
@@ -517,7 +589,8 @@
 
         <a href=""
           ><div
-            class="bg-white rounded-xl overflow-hidden shadow-md shadow-gray-300 flex flex-col group hover:outline hover:outline-variant transition-all duration-400 cursor-pointer"
+            class="bg-white rounded-xl overflow-hidden shadow-md shadow-gray-300 flex flex-col group hover:outline hover:outline-variant transition-all duration-400 cursor-pointer menu-items"
+            data-category="african"
           >
             <div class="aspect-square w-full overflow-hidden">
               <img
@@ -544,7 +617,10 @@
               <div class="mt-auto flex items-center justify-between">
                 <span class="font-bold text-red-700">$4.99</span>
                 <button
-                  class="bg-red-600 text-white p-2 rounded-full flex items-center justify-center hover:bg-red-700 active:scale-90 transition all shadow-md"
+                  class="add-to-cart-btn bg-red-600 text-white p-2 rounded-full flex items-center justify-center hover:bg-red-700 active:scale-90 transition all shadow-md"
+                  data-id="10"
+                  data-price="4.99"
+                  data-name="Jollof Rice"
                 >
                   <span>
                     <i
@@ -559,7 +635,8 @@
 
         <a href=""
           ><div
-            class="bg-white rounded-xl overflow-hidden shadow-md shadow-gray-300 flex flex-col group hover:outline hover:outline-variant transition-all duration-400 cursor-pointer"
+            class="bg-white rounded-xl overflow-hidden shadow-md shadow-gray-300 flex flex-col group hover:outline hover:outline-variant transition-all duration-400 cursor-pointer menu-items"
+            data-category="african"
           >
             <div class="aspect-square w-full overflow-hidden">
               <img
@@ -586,7 +663,10 @@
               <div class="mt-auto flex items-center justify-between">
                 <span class="font-bold text-red-700">$7.49</span>
                 <button
-                  class="bg-red-600 text-white p-2 rounded-full flex items-center justify-center hover:bg-red-700 active:scale-90 transition all shadow-md"
+                  class="add-to-cart-btn bg-red-600 text-white p-2 rounded-full flex items-center justify-center hover:bg-red-700 active:scale-90 transition all shadow-md"
+                  data-id="11"
+                  data-price="7.49"
+                  data-name="Suya"
                 >
                   <span>
                     <i
@@ -601,7 +681,8 @@
 
         <a href=""
           ><div
-            class="bg-white rounded-xl overflow-hidden shadow-md shadow-gray-300 flex flex-col group hover:outline hover:outline-variant transition-all duration-400 cursor-pointer"
+            class="bg-white rounded-xl overflow-hidden shadow-md shadow-gray-300 flex flex-col group hover:outline hover:outline-variant transition-all duration-400 cursor-pointer menu-items"
+            data-category="african"
           >
             <div class="aspect-square w-full overflow-hidden">
               <img
@@ -628,7 +709,10 @@
               <div class="mt-auto flex items-center justify-between">
                 <span class="font-bold text-red-700">$6.99</span>
                 <button
-                  class="bg-red-600 text-white p-2 rounded-full flex items-center justify-center hover:bg-red-700 active:scale-90 transition all shadow-md"
+                  class="add-to-cart-btn bg-red-600 text-white p-2 rounded-full flex items-center justify-center hover:bg-red-700 active:scale-90 transition all shadow-md"
+                  data-id="12"
+                  data-price="6.99"
+                  data-name="Egusi Soup"
                 >
                   <span>
                     <i
@@ -644,7 +728,8 @@
         <!-- Bevrages -->
         <a href="" id="drinks"
           ><div
-            class="bg-white rounded-xl overflow-hidden shadow-md shadow-gray-300 flex flex-col group hover:outline hover:outline-variant transition-all duration-400 cursor-pointer"
+            class="bg-white rounded-xl overflow-hidden shadow-md shadow-gray-300 flex flex-col group hover:outline hover:outline-variant transition-all duration-400 cursor-pointer menu-items"
+            data-category="drinks"
           >
             <div class="aspect-square w-full overflow-hidden">
               <img
@@ -670,7 +755,10 @@
               <div class="mt-auto flex items-center justify-between">
                 <span class="font-bold text-red-700">$4.49</span>
                 <button
-                  class="bg-red-600 text-white p-2 rounded-full flex items-center justify-center hover:bg-red-700 active:scale-90 transition all shadow-md"
+                  class="add-to-cart-btn bg-red-600 text-white p-2 rounded-full flex items-center justify-center hover:bg-red-700 active:scale-90 transition all shadow-md"
+                  data-id="13"
+                  data-price="4.49"
+                  data-name="Snacks"
                 >
                   <span>
                     <i
@@ -685,7 +773,8 @@
 
         <a href=""
           ><div
-            class="bg-white rounded-xl overflow-hidden shadow-md shadow-gray-300 flex flex-col group hover:outline hover:outline-variant transition-all duration-400 cursor-pointer"
+            class="bg-white rounded-xl overflow-hidden shadow-md shadow-gray-300 flex flex-col group hover:outline hover:outline-variant transition-all duration-400 cursor-pointer menu-items"
+            data-category="drinks"
           >
             <div class="aspect-square w-full overflow-hidden">
               <img
@@ -711,7 +800,10 @@
               <div class="mt-auto flex items-center justify-between">
                 <span class="font-bold text-red-700">$9.99</span>
                 <button
-                  class="bg-red-600 text-white p-2 rounded-full flex items-center justify-center hover:bg-red-700 active:scale-90 transition all shadow-md"
+                  class="add-to-cart-btn bg-red-600 text-white p-2 rounded-full flex items-center justify-center hover:bg-red-700 active:scale-90 transition all shadow-md"
+                  data-id="14"
+                  data-price="9.99"
+                  data-name="Matcha Latte"
                 >
                   <span>
                     <i
@@ -726,7 +818,8 @@
 
         <a href=""
           ><div
-            class="bg-white rounded-xl overflow-hidden shadow-md shadow-gray-300 flex flex-col group hover:outline hover:outline-variant transition-all duration-400 cursor-pointer"
+            class="bg-white rounded-xl overflow-hidden shadow-md shadow-gray-300 flex flex-col group hover:outline hover:outline-variant transition-all duration-400 cursor-pointer menu-items"
+            data-category="drinks"
           >
             <div class="aspect-square w-full overflow-hidden">
               <img
@@ -752,7 +845,10 @@
               <div class="mt-auto flex items-center justify-between">
                 <span class="font-bold text-red-700">$9.49</span>
                 <button
-                  class="bg-red-600 text-white p-2 rounded-full flex items-center justify-center hover:bg-red-700 active:scale-90 transition all shadow-md"
+                  class="add-to-cart-btn bg-red-600 text-white p-2 rounded-full flex items-center justify-center hover:bg-red-700 active:scale-90 transition all shadow-md"
+                  data-id="15"
+                  data-price="9.49"
+                  data-name="Iced Latte"
                 >
                   <span>
                     <i
@@ -767,7 +863,8 @@
 
         <a href=""
           ><div
-            class="bg-white rounded-xl overflow-hidden shadow-md shadow-gray-300 flex flex-col group hover:outline hover:outline-variant transition-all duration-400 cursor-pointer"
+            class="bg-white rounded-xl overflow-hidden shadow-md shadow-gray-300 flex flex-col group hover:outline hover:outline-variant transition-all duration-400 cursor-pointer menu-items"
+            data-category="drinks"
           >
             <div class="aspect-square w-full overflow-hidden">
               <img
@@ -793,7 +890,10 @@
               <div class="mt-auto flex items-center justify-between">
                 <span class="font-bold text-red-700">$7.99</span>
                 <button
-                  class="bg-red-600 text-white p-2 rounded-full flex items-center justify-center hover:bg-red-700 active:scale-90 transition all shadow-md"
+                  class="add-to-cart-btn bg-red-600 text-white p-2 rounded-full flex items-center justify-center hover:bg-red-700 active:scale-90 transition all shadow-md"
+                  data-id="16"
+                  data-price="7.99"
+                  data-name="Smoothie"
                 >
                   <span>
                     <i
@@ -849,5 +949,6 @@
         </div>
       </div>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>
